@@ -9,7 +9,7 @@ export default function Main() {
 
   const getPokemonData = async () => {
     axios
-      .get('/data/pokemon.json')
+      .get('http://localhost:8080/api/pokemon')
       .then(res => {
         setPokeData(res.data.data);
       })

@@ -7,14 +7,15 @@
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "dependencies": {
+    "@types/node": "^17.0.8",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "@types/node": "^17.0.8"
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
   },
   "devDependencies": {
-    "concurrently": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
+    "concurrently": "^4.0.1",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
