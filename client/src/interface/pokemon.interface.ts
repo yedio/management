@@ -3,7 +3,7 @@ export interface PokemonData {
   name: string;
   image: string;
   description: string;
-  type: string[];
+  type: string;
   division: string;
   height: number;
   weight: number;
