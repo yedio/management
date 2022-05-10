@@ -22,7 +22,7 @@ const pool = mysql.createConnection({
 
 app.get("/api/pokemon", (req: any, res: any) => {
   pool.query("SELECT * FROM pokemon", (err: any, rows: any, fields: any) => {
-    res.send({ data: rows });
+    res.send({ code: "0", data: rows });
   });
 });
 

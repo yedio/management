@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import instance from '../../utils/ApiController';
 import styled from 'styled-components';
 import Pokemon from '../../components/Pokemon';
 import { PokemonData } from '../../interface/pokemon.interface';
+import { API } from '../../config';
 
 export default function Main() {
   const [pokeData, setPokeData] = useState<PokemonData[]>([]);
 
   const getPokemonData = async () => {
-    axios
-      .get('http://localhost:8080/api/pokemon')
+    instance
+      .get(`${API.pokemonList}`)
       .then(res => {
         setPokeData(res.data.data);
       })
