@@ -12,7 +12,7 @@ export default function Main() {
     instance
       .get(`${API.pokemonList}`)
       .then(res => {
-        setPokeData(res.data.data);
+        setPokeData(res.data);
       })
       .catch(Error => {
         console.log(Error);
@@ -27,9 +27,10 @@ export default function Main() {
     <Wrapper>
       <Sect>
         <PokeUl>
-          {pokeData.map((data: PokemonData) => {
-            return <Pokemon key={data.id} pokeData={data} />;
-          })}
+          {pokeData &&
+            pokeData.map((data: PokemonData) => {
+              return <Pokemon key={data.id} pokeData={data} />;
+            })}
         </PokeUl>
       </Sect>
     </Wrapper>

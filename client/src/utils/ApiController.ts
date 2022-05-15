@@ -1,6 +1,4 @@
 import axios from 'axios';
-// import { store } from '..';
-// import { setIsLoading } from '../redux/isLoading';
 
 const API_BASEURL = process.env.REACT_APP_API_BASEURL;
 
@@ -17,19 +15,15 @@ const instance = axios.create(defaultOption);
 
 instance.interceptors.request.use(
   config => {
-    // store.dispatch(setIsLoading(true));
     return config;
   },
   error => {
-    // store.dispatch(setIsLoading(false));
     return Promise.reject(error);
   }
 );
 
 instance.interceptors.response.use(
   response => {
-    // store.dispatch(setIsLoading(false));
-
     // 인증된 유저가 아닐 경우
     if (response.data.code === '10001') {
       if (localStorage.getItem('error') === null) {
@@ -61,7 +55,6 @@ instance.interceptors.response.use(
     }
   },
   error => {
-    // store.dispatch(setIsLoading(false));
     return Promise.reject(error);
   }
 );
