@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Pokemon from '../../components/Pokemon';
 import { PokemonData } from '../../interface/pokemon.interface';
 import { API } from '../../config';
+import MainModal from './components/MainModal';
 
 export default function Main() {
   const [pokeData, setPokeData] = useState<PokemonData[]>([]);
@@ -33,6 +34,7 @@ export default function Main() {
             })}
         </PokeUl>
       </Sect>
+      <MainModal />
     </Wrapper>
   );
 }
@@ -49,7 +51,4 @@ const Sect = styled.section`
 const PokeUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin-left: -10px;
-  margin-right: -10px;
-  clear: both;
 `;
