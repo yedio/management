@@ -1,3 +1,3 @@
 export const API = {
-  pokemonList: `/auth/kakao/login`,
+  pokemonList: `/pokemon`,
 };
